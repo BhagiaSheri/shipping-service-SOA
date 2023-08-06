@@ -4,6 +4,8 @@ public class Order {
 	private String orderNumber;
 	private double amount;
 
+	private OrderType orderType = OrderType.DOMESTIC;
+
 	public Order() {
 	}
 
@@ -11,6 +13,12 @@ public class Order {
 		super();
 		this.orderNumber = orderNumber;
 		this.amount = amount;
+	}
+
+	public Order(String orderNumber, double amount, OrderType orderType) {
+		this.orderNumber = orderNumber;
+		this.amount = amount;
+		this.orderType = orderType;
 	}
 
 	public String getOrderNumber() {
@@ -29,11 +37,20 @@ public class Order {
 		this.amount = amount;
 	}
 
+	public OrderType getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(OrderType orderType) {
+		this.orderType = orderType;
+	}
+
 	@Override
 	public String toString() {
 		return "Order{" +
 				"orderNumber='" + orderNumber + '\'' +
 				", amount=" + amount +
+				", orderType=" + orderType +
 				'}';
 	}
 }
